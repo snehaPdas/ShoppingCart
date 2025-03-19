@@ -97,21 +97,19 @@ function Product() {
               
             )}
             
-            {total < THRESHOLD ? (
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <div>Add₹{THRESHOLD - total} more to get a FREE Wireless Mouse!</div>
-                
-                  <div 
-                     
-                    style={{ width: `${Math.min(100, (total / THRESHOLD) * 100)}%` }}
-                  ></div>
-                
-              </div>
-            ) : (
-            
-                <p>You got  the FREE Wireless Mouse</p>
-            
-            )}
+            {total < THRESHOLD && (
+  <div className="bg-blue-50 p-4 rounded-lg mb-4">
+    <div className="text-gray-700 font-medium mb-2">
+      Add ₹{THRESHOLD - total} more to get a FREE Wireless Mouse!
+    </div>
+    <div className="w-full bg-gray-200 rounded-full h-4">
+      <div
+        className="bg-blue-500 h-4 rounded-full"
+        style={{ width: `${Math.min(100, (total / THRESHOLD) * 100)}%` }}
+      ></div>
+    </div>
+  </div>
+)}
           </div>
         </div>
 
